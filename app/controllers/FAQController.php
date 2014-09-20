@@ -2,15 +2,14 @@
 
 // app/controllers/PostsController.php
 
-class HomeController extends Controller
+class FAQController extends Controller
 {
 
-    public function home()
+    public function faq()
     {
         // Show the create post form.
-        return View::make('home');
+        return View::make('faq');
         //return view('create'); //new for 5.0
     }
 
-    
 }

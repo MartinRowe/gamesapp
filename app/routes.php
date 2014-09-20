@@ -13,16 +13,31 @@
 |
 */
 
-// Bind route parameters.
-Route::model('game', 'Game');
+// Bind route parameters for home page.
+Route::model('home', 'Home');
+Route::get('/', 'HomeController@home');
 
-// Show pages.
-Route::get('/', 'GamesController@index');
-Route::get('/create', 'GamesController@create');
-Route::get('/edit/{game}', 'GamesController@edit');
-Route::get('/delete/{game}', 'GamesController@delete');
 
-// Handle form submissions.
-Route::post('/create', 'GamesController@handleCreate');
-Route::post('/edit', 'GamesController@handleEdit');
-Route::post('/delete', 'GamesController@handleDelete');
+// Bind route parameters for blog page.
+Route::model('post', 'Post');
+
+// Show blog pages.
+Route::get('/blog', 'PostsController@index');
+Route::get('/blog/create', 'PostsController@create');
+Route::get('/blog/edit/{post}', 'PostsController@edit');
+Route::get('/blog/delete/{post}', 'PostsController@delete');
+
+// Handle blog form submissions.
+Route::post('/blog/create', 'PostsController@handleCreate');
+Route::post('/blog/edit', 'PostsController@handleEdit');
+Route::post('/blog/delete', 'PostsController@handleDelete');
+
+
+// Bind route parameters for FAQ page.
+Route::model('faq', 'FAQ');
+Route::get('/faq', 'FAQController@faq');
+
+// Bind route parameters for about page.
+Route::model('about', 'About');
+Route::get('/about', 'AboutController@about');
+

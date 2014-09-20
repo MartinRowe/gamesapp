@@ -2,15 +2,14 @@
 
 // app/controllers/PostsController.php
 
-class HomeController extends Controller
+class AboutController extends Controller
 {
 
-    public function home()
+    public function about()
     {
         // Show the create post form.
-        return View::make('home');
+        return View::make('about');
         //return view('create'); //new for 5.0
     }
-
     
 }
