@@ -10,6 +10,24 @@
 
  <!--<div class=demo-block-gray-white>   -->
      <a href="{{ action('PostsController@index') }}" >The Blog Posts</a>
+     <?php
+/**
+ * Path to the 'app' folder
+ */
+echo app_path();
+/**
+ * Path to the project's root folder
+ */
+echo base_path();
+/**
+ * Path to the 'public' folder
+ */
+echo public_path();
+/**
+ * Path to the 'app/storage' folder
+ */
+echo storage_path();
+?>
     @if ($posts->isEmpty())
         <p>There are not any posts! :(</p>
     @else
@@ -27,7 +45,9 @@
                 <tr>
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->blogpost }}</td>
+                    <td>{{ HTML::image($post->postimage)}}</td>
                     <td>{{ $post->complete ? 'Yes' : 'No' }}</td>
+
                     <td>
                         <a href="{{ action('PostsController@edit', $post->id) }}" class="btn btn-default">Edit Post</a>
                     <td>

@@ -27,7 +27,7 @@
 --><div class="grid__item  six-twelfths">
       <!--   <p class=demo-block-red-white>Six Twelfths</p> -->
       <div class=demo-block-gray-white> 
-    
+    {{ HTML::image('meSmile.jpg')}}
       </div>
       @yield('content')
     </div><!--
